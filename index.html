@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PS119 Practice Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            -webkit-tap-highlight-color: transparent;
+        }
+        .smooth-transition { transition: all 0.2s ease-in-out; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased h-screen overflow-y-auto hide-scrollbar">
+
+    <!-- Navbar -->
+    <nav class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="renderHome()">
+                <div class="bg-blue-800 p-2 rounded-lg">
+                    <i class="fas fa-graduation-cap text-xl text-blue-200"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight leading-none">PS119 Portal</h1>
+                    <span class="text-blue-300 text-xs font-medium">Test Prep Center</span>
+                </div>
+            </div>
+            <button onclick="renderHome()" class="text-blue-200 hover:text-white sm:hidden flex items-center p-2">
+                <i class="fas fa-home text-lg"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div id="app" class="max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 pb-32">
+        <!-- Content gets injected here -->
+    </div>
+
+    <!-- Hidden Data Template -->
+    <script type="text/template" id="raw-test-data">
+TEST 1 
+***
+### PS119: MODERN RECEPTIONS OF ANCIENT POLITICAL THOUGHT
+**PRACTICE TEST**
+
+**Part 1: Multiple Choice**
+
+**1. According to Thomas Hobbes, what are the three principal causes of quarrel in the nature of man?**
+A. Religion, politics, and economics
+B. Competition, diffidence, and glory
+C. Justice, equality, and liberty
+D. Envy, hatred, and the art of words
+
+**2. In Thomas Hobbes's metaphor of the Leviathan (the Commonwealth) as an "artificial man," what does he designate as the "artificial soul"?**
+A. The magistrates and officers
+B. Equity and the laws
+C. Sovereignty
+D. Reward and punishment
+
+**3. Why does John Stuart Mill believe that the "tyranny of the majority" is often more formidable than political oppression by a dictator?**
+A. Because it utilizes a secret police force to monitor citizens.
+B. Because it leaves fewer means of escape, penetrating deeply into the details of daily life and enslaving the soul itself.
+C. Because majorities always execute their mandates through strict legal penalties.
+D. Because the majority always acts in accordance with divine revelation.
+
+**4. According to John Stuart Mill's "Harm Principle," society is justified in exercising power over an individual against their will ONLY when:**
+A. The individual is acting immorally according to religious traditions.
+B. The government wishes to improve the individual's physical or mental well-being.
+C. The individual's actions threaten to cause harm to others.
+D. The individual expresses an opinion that the majority finds deeply offensive.
+
+**5. In Plato’s Apology, Socrates compares himself to a "gadfly." What is the meaning behind this metaphor?**
+A. He is a parasite draining the city's material wealth.
+B. He has a divine mission to sting, arouse, and awaken the sluggish "horse" of the Athenian public into examining their lives.
+C. He is a minor annoyance that the state should easily crush with legal penalties.
+D. He flies above the citizens, possessing absolute and infallible knowledge.
+
+**6. According to Friedrich Engels, what was the primary historical driver for the development of the strict monogamous family?**
+A. The emergence of romantic, individual sex-love as the highest ideal.
+B. The biological differences in physical strength between men and women.
+C. The concentration of heritable wealth in the hands of individual men, and their need to ensure undisputed paternity for their heirs.
+D. A sudden shift in religious ideologies during the Middle Ages.
+
+**7. How does Hobbes view the natural "equality of ability" among humans in the state of nature?**
+A. It is a peaceful foundation where all humans share communal property equitably.
+B. It is the basis for natural, democratic rights that prevent the state from becoming tyrannical.
+C. It means that even the weakest individual has enough strength to kill the strongest, leading to a constant state of fear and war.
+D. It proves that humans are naturally sociable and cooperative animals.
+
+**8. John Stuart Mill argues that silencing a non-conforming opinion is a "peculiar evil" because:**
+A. It robs the human race; if the opinion is true, society loses the truth, and if it is false, society loses the clearer perception of truth produced by its collision with error.
+B. It is a direct violation of the social contract signed by the citizens and the government.
+C. It causes the person silenced to immediately resort to physical violence against the state.
+D. The government is always fundamentally wrong on every issue.
+
+**9. During his trial, Socrates investigates the Oracle of Delphi’s claim that no man is wiser than him. What does Socrates ultimately conclude the Oracle meant?**
+A. Socrates possesses superhuman knowledge about the heavens and the earth.
+B. Socrates is a master of political rhetoric and can win any debate.
+C. Socrates's wisdom consists solely in recognizing his own ignorance—he does not think he knows what he does not know.
+D. The Oracle was actually referring to Plato, not Socrates.
+
+**10. According to Engels, in which modern social class do the economic foundations of male supremacy and strict monogamy largely disappear?**
+A. The aristocratic class
+B. The bourgeois class
+C. The proletarian (working) class
+D. The clerical class
+
+### ANSWER KEY
+1. **B** (Competition, diffidence, and glory)
+2. **C** (Sovereignty)
+3. **B** (Because it leaves fewer means of escape, penetrating deeply into the details of daily life...)
+4. **C** (The individual's actions threaten to cause harm to others)
+5. **B** (He has a divine mission to sting, arouse, and awaken the sluggish "horse" of the Athenian public...)
+6. **C** (The concentration of heritable wealth in the hands of individual men...)
+7. **C** (It means that even the weakest individual has enough strength to kill the strongest...)
+8. **A** (It robs the human race; if the opinion is true, society loses the truth...)
+9. **C** (Socrates's wisdom consists solely in recognizing his own ignorance...)
+10. **C** (The proletarian / working class)
+
+TEST 2 
+***
+### PS119: MODERN RECEPTIONS OF ANCIENT POLITICAL THOUGHT
+**PRACTICE TEST #2**
+
+**Part 1: Multiple Choice**
+
+**1. According to Thomas Hobbes’s extended metaphor of the Leviathan, what does "civil war" represent to the artificial body of the state?**
+A. The artificial soul
+B. A temporary sickness
+C. Death
+D. A necessary surgical amputation
+
+**2. When discussing the nature of human passions as a "race," how does Hobbes define the act of "forsaking the course"?**
+A. To die.
+B. To show humility.
+C. To be filled with vainglory.
+D. To achieve felicity.
+
+**3. In Plato's Apology, how does Socrates expose a major logical contradiction in Meletus's indictment during his cross-examination?**
+A. Meletus claims Socrates corrupts the youth, but Meletus has no sons of his own.
+B. Meletus accuses Socrates of being a sophist who charges money, but admits Socrates is completely impoverished.
+C. Meletus asserts that Socrates is an absolute atheist who believes in no gods, but the indictment accuses him of teaching about demigods and spiritual agencies.
+D. Meletus claims the laws of Athens are perfect, but admits the Assembly frequently changes them.
+
+**4. According to John Stuart Mill, what is the danger of a society unanimously accepting a true opinion without any fear of it being challenged?**
+A. The truth will be held mechanically as a "dead dogma" rather than a living, deeply felt truth.
+B. The society will instantly collapse into anarchism.
+C. The government will inevitably mandate that truth as a religious law.
+D. The truth will be stolen and distorted by foreign nations.
+
+**5. How do Marx and Engels define "surplus value" in a capitalist economy?**
+A. The extra physical goods produced that cannot be sold and are thrown away.
+B. The difference between the total new value created by a worker's labor and the actual cost of their wages (reproduction costs).
+C. The excessive taxes imposed by the state on wealthy factory owners.
+D. The inherited wealth passed down through strict monogamous families.
+
+**6. Hobbes heavily criticizes the Aristotelian scholastic tradition taught in universities because he believes it relies on:**
+A. Extreme materialism and a rejection of God.
+B. Empirical experimentation and measuring land and water.
+C. "Empty words" and qualitative terms like essence, substance, and form that fail to trace causes and effects.
+D. A dangerous promotion of absolute monarchy over democratic rights.
+
+**7. In On Liberty, what metaphor does Mill use to describe human nature and the necessity of cultivating individuality?**
+A. A machine built after a model to do exact, prescribed work.
+B. A tree that requires to grow and develop itself on all sides.
+C. A blank slate waiting for the government to write its laws upon it.
+D. A sluggish horse that needs a gadfly to wake it up.
+
+**8. According to Hobbes, why are humans fundamentally different from "sociable animals" like bees and ants?**
+A. Humans naturally share all property equally, while animals hoard food.
+B. For animals, the private good is the common good; but humans constantly compete for honor, relish what is eminent, and use the "art of words" to deceive.
+C. Animals are capable of forming artificial covenants, while humans can only rely on natural instincts.
+D. Animals lack the capacity to fight, making their lives entirely peaceful.
+
+**9. Marx and Engels describe the relationship between the owners of the means of production and the workers as a "dialectic" because:**
+A. They share the exact same interests and divide profits equally.
+B. They collaborate to create value, yet have deeply conflicting interests over who gets the benefits (the master/slave dynamic).
+C. They both wish to return to a primitive agricultural society.
+D. The workers eventually purchase the factories and become owners themselves.
+
+**10. Under Hobbes's three principal causes of quarrel, which cause drives people to use violence over "trifles" like a smile or a different opinion?**
+A. Diffidence
+B. Competition
+C. Glory
+D. Sensuality
+
+### ANSWER KEY
+1. **C** (Death)
+2. **A** (To die)
+3. **C** (Meletus asserts that Socrates is an absolute atheist... but the indictment accuses him of teaching about demigods)
+4. **A** (The truth will be held mechanically as a "dead dogma" rather than a living truth)
+5. **B** (The difference between the total new value created by a worker's labor and the actual cost of their wages)
+6. **C** ("Empty words" and qualitative terms like essence, substance, and form)
+7. **B** (A tree that requires to grow and develop itself on all sides)
+8. **B** (For animals, the private good is the common good; but humans constantly compete for honor...)
+9. **B** (They collaborate to create value, yet have deeply conflicting interests over who gets the benefits)
+10. **C** (Glory)
+
+TEST 3
+***
+### PS119: MODERN RECEPTIONS OF ANCIENT POLITICAL THOUGHT
+**PRACTICE TEST #3**
+
+**Part 1: Multiple Choice**
+
+**1. SYNTHESIS: Despite his reputation as a strict materialist and realist, Thomas Hobbes explicitly likens his own project in the Leviathan to Plato’s Republic. What is the specific point of solidarity between Hobbes and Plato?**
+A. They both agree that the state must completely abolish private property to achieve justice.
+B. They both utilize the "Socratic Method" of negative dialectics to expose the ignorance of the ruling class.
+C. They both acknowledge how incredibly difficult it is to theorize about politics, but hope their speculative theories might eventually be adopted by a sovereign/ruler to convert theory into practice.
+D. They both believe that ancient Greek democracy was the purest form of government.
+
+**2. SYNTHESIS: John Stuart Mill praises the "Socratic dialectics" used in Plato's dialogues. How does Mill theoretically justify the Socratic method within his own liberal framework?**
+A. He views it as the perfect example of "negative logic," which is an indispensable means of pointing out weaknesses in theory and attaining truly vital, living knowledge.
+B. He sees it as a tool the majority can use to legally enforce traditional moral conduct upon eccentric minorities.
+C. He believes it is a method for extracting the absolute, infallible truth of Christian theology.
+D. He considers it an outdated "dead dogma" that should be replaced by utilitarian calculations.
+
+**3. SYNTHESIS: How does Friedrich Engels use the history of Ancient Athens to prove his Marxist theories regarding the state and the family?**
+A. He views Athens as the primary example of how a society can peacefully transition into communism without a violent revolution.
+B. He claims Athens provides the "purest, classic form" of state formation, demonstrating how the state sprang directly out of class oppositions and the establishment of private property, which dissolved the old kinship (gentile) society.
+C. He argues that Athenian democracy proved that political ideology completely determines the economic structure of a society, rather than the other way around.
+D. He uses Athenian history to show that the monogamous family was naturally formed out of romantic individual sex-love.
+
+**4. SYNTHESIS: According to Socratic philosophy, "No one errs willingly," meaning injustice stems from ignorance. How would Thomas Hobbes, based on his description of human nature, most likely respond to this specific Socratic claim?**
+A. Hobbes would completely agree, arguing that humans naturally seek the common good but are simply confused by the shadows in the cave.
+B. Hobbes would argue that human conflict is not merely a cognitive error of ignorance, but is driven by innate, inescapable passions such as competition, diffidence, and the desire for glory.
+C. Hobbes would argue that humans only do wrong because they are possessed by spiritual agencies and demigods.
+D. Hobbes would agree that knowledge of the Good automatically brings peace.
+
+**5. In Hobbes’s metaphor of the state as an "artificial man," what do "reward and punishment" represent?**
+A. The artificial soul
+B. The artificial joints
+C. The memory
+D. The nerves
+
+**6. According to Karl Marx and Friedrich Engels, what ultimately defines a society's "mode of production" (its economic basis)?**
+A. The specific form of government (monarchy vs. democracy).
+B. The dominant religious ideology of the era.
+C. Who owns the means of production.
+D. The level of education attained by the working class.
+
+**7. In his critique of the Aristotelian scholastic tradition taught in English universities, Hobbes argues that terms like "substance," "essence," "accident," and "potentiality" are:**
+A. The highest achievements of human reasoning.
+B. Empty, "insignificant language" that fails to reason practically from material causes to effects.
+C. Essential for measuring land, water, and discovering the properties of geometry.
+D. Dangerous because they explicitly promote atheism.
+
+**8. According to the lectures on Plato, the Socratic Method (midwifery) is not simply a flattering extraction of wonderful ideas. Instead, it involves:**
+A. Showing the interlocutor that all of their opinions are actually perfect and infallible.
+B. Writing down dogmatic laws for the citizens to memorize and obey.
+C. A relentless process of questions and answers that often embarrasses the interlocutor by exposing their confused, contradictory opinions.
+D. Asking the Oracle of Delphi to provide the answers to political questions.
+
+**9. According to John Stuart Mill’s On Liberty, what is the "equation of liberalism"?**
+A. The belief that absolute equality of wealth will naturally result in maximum liberty.
+B. The idea that fostering individual singularity and diversity actually makes human life as a whole richer, more animating, and infinitely better, meaning individuality and societal happiness are not at odds.
+C. The strict mathematical calculation of pain versus pleasure in the criminal justice system.
+D. The belief that society must mandate eccentricity by law to prevent people from becoming like machines.
+
+**10. What is the fundamental contradiction or "dialectic" of capitalism according to Marxist theory?**
+A. Capitalists and workers collaborate to create value, but they have deeply conflicting interests over who gets the benefits (the master/slave dynamic).
+B. The state wants to protect private property, but the capitalists want to abolish it.
+C. Workers want to work longer hours, but factory owners force them to work less.
+D. Monogamous families seek to share their wealth with the community, but the state prevents it.
+
+### ANSWER KEY
+1. **C** (They both acknowledge how incredibly difficult it is to theorize about politics, but hope their speculative theories might eventually be adopted by a sovereign)
+2. **A** (He views it as the perfect example of "negative logic," which is an indispensable means of pointing out weaknesses in theory)
+3. **B** (He claims Athens provides the "purest, classic form" of state formation, demonstrating how the state sprang directly out of class oppositions)
+4. **B** (Hobbes would argue that human conflict is not merely a cognitive error of ignorance, but is driven by innate, inescapable passions)
+5. **D** (The nerves)
+6. **C** (Who owns the means of production)
+7. **B** (Empty, "insignificant language" that fails to reason practically)
+8. **C** (A relentless process of questions and answers that often embarrasses the interlocutor by exposing their confused opinions)
+9. **B** (The idea that fostering individual singularity and diversity actually makes human life as a whole richer... individuality and societal happiness are not at odds)
+10. **A** (Capitalists and workers collaborate to create value, but they have deeply conflicting interests over who gets the benefits)
+    </script>
+
+    <!-- App Logic -->
+    <script>
+        // --- 1. DATA PARSING ---
+        function parseTests() {
+            const rawText = document.getElementById('raw-test-data').innerText;
+            const testsData = [];
+            const testBlocks = rawText.split(/TEST\s+\d+\s+/).filter(b => b.trim().length > 0);
+
+            testBlocks.forEach((block, index) => {
+                const testObj = { 
+                    id: index + 1, 
+                    title: `Practice Test ${index + 1}${index === 2 ? ' (Synthesis)' : ''}`, 
+                    questions: [] 
+                };
+
+                const parts = block.split("### ANSWER KEY");
+                const questionsArea = parts[0];
+                const answerArea = parts[1];
+
+                // Parse Answers mapping
+                const answersMap = {};
+                if (answerArea) {
+                    const answerLines = answerArea.split('\n');
+                    answerLines.forEach(line => {
+                        const match = line.match(/^(\d+)\.\s+\*\*([A-D])\*\*(.*)/);
+                        if (match) {
+                            answersMap[match[1]] = {
+                                correctLetter: match[2],
+                                feedback: match[3].trim().replace(/^\(|\)$/g, '').trim()
+                            };
+                        }
+                    });
+                }
+
+                // Parse Questions
+                const qSplits = questionsArea.split(/\*\*(\d+)\.\s+/);
+                for (let i = 1; i < qSplits.length; i += 2) {
+                    const qNum = qSplits[i];
+                    const qRest = qSplits[i + 1];
+
+                    let qText = "";
+                    let optionsStr = "";
+                    
+                    const aIndex = qRest.indexOf('\nA.');
+                    if (aIndex !== -1) {
+                        qText = qRest.substring(0, aIndex).replace(/\*\*/g, '').trim();
+                        optionsStr = qRest.substring(aIndex).trim();
+                    }
+
+                    const aMatch = optionsStr.match(/A\.\s+([\s\S]*?)(?=B\.\s+)/);
+                    const bMatch = optionsStr.match(/B\.\s+([\s\S]*?)(?=C\.\s+)/);
+                    const cMatch = optionsStr.match(/C\.\s+([\s\S]*?)(?=D\.\s+)/);
+                    const dMatch = optionsStr.match(/D\.\s+([\s\S]*)/);
+
+                    if (aMatch && bMatch && cMatch && dMatch) {
+                        let cleanD = dMatch[1].split(/\n\n|\n\*\*\*/)[0].trim();
+                        testObj.questions.push({
+                            number: qNum,
+                            text: qText,
+                            options: { A: aMatch[1].trim(), B: bMatch[1].trim(), C: cMatch[1].trim(), D: cleanD },
+                            correctAnswer: answersMap[qNum] ? answersMap[qNum].correctLetter : null,
+                            feedback: answersMap[qNum] ? answersMap[qNum].feedback : "No additional feedback provided."
+                        });
+                    }
+                }
+                testsData.push(testObj);
+            });
+            return testsData;
+        }
+
+        // --- 2. STATE ---
+        const tests = parseTests();
+        let currentTest = null;
+        let userAnswers = {};
+        let isReviewMode = false;
+        const appDiv = document.getElementById('app');
+
+        // --- 3. RENDERING LOGIC ---
+        function renderHome() {
+            appDiv.innerHTML = `
+                <div class="py-8 animate-fade-in text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4">Select a Practice Test</h2>
+                    <p class="text-base sm:text-lg text-slate-500 mb-10 max-w-2xl mx-auto px-4">Test your knowledge of Hobbes, Mill, Marx, and Socrates. Get instant feedback on your answers.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 px-2">
+                        ${tests.map((test, i) => `
+                            <div onclick="startTest(${i})" class="group bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-400 cursor-pointer smooth-transition flex flex-col items-start text-left">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4 group-hover:bg-blue-600 smooth-transition">
+                                    <i class="fas fa-file-signature text-blue-600 group-hover:text-white text-xl smooth-transition"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-800 group-hover:text-blue-700 mb-2">${test.title}</h3>
+                                <p class="text-slate-500 text-sm mb-4 font-medium">${test.questions.length} Multiple Choice Questions</p>
+                                <div class="mt-auto pt-4 w-full border-t border-slate-100 flex items-center justify-between">
+                                    <span class="text-blue-600 font-bold text-sm">Start Test</span>
+                                    <i class="fas fa-arrow-right text-blue-600 text-sm transform group-hover:translate-x-1 smooth-transition"></i>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function startTest(index) {
+            currentTest = tests[index];
+            userAnswers = {};
+            isReviewMode = false;
+            
+            // Build the HTML framework for the test
+            let html = `
+                <div class="mb-6 border-b border-slate-200 pb-4">
+                    <button onclick="renderHome()" class="text-slate-500 hover:text-blue-700 font-semibold mb-4 flex items-center gap-2 text-sm sm:text-base smooth-transition">
+                        <i class="fas fa-arrow-left"></i> Exit Test
+                    </button>
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-4">
+                        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900">${currentTest.title}</h1>
+                        <div class="w-full md:w-64" id="progress-container">
+                            <div class="flex justify-between text-sm font-bold text-slate-600 mb-2">
+                                <span>Progress</span>
+                                <span id="progress-count">0 / ${currentTest.questions.length}</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2.5">
+                                <div id="progress-bar" class="bg-blue-600 h-2.5 rounded-full smooth-transition" style="width: 0%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="score-header-container"></div>
+
+                <div class="space-y-6 sm:space-y-8" id="questions-container">
+                    ${currentTest.questions.map(q => renderQuestionHTML(q)).join('')}
+                </div>
+
+                <div id="bottom-bar" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-4 shadow-[0_-10px_15px_-3px_rgba(0,0,0,0.05)] z-40">
+                    <div class="max-w-4xl mx-auto flex justify-between items-center px-2 sm:px-6 lg:px-8">
+                        <span id="bottom-progress-count" class="text-slate-600 font-bold hidden sm:inline text-lg">Answered: 0 of ${currentTest.questions.length}</span>
+                        <button onclick="submitTest()" class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 text-white font-bold rounded-xl shadow-md hover:bg-blue-700 active:bg-blue-800 smooth-transition text-lg flex justify-center items-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Submit Test
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            appDiv.innerHTML = html;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function renderQuestionHTML(q) {
+            return `
+                <div class="bg-white p-5 sm:p-8 rounded-2xl border border-slate-200 shadow-sm smooth-transition" id="q-${q.number}">
+                    <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-5 flex gap-3 leading-snug">
+                        <span class="text-blue-600 shrink-0 w-6">${q.number}.</span>
+                        <span>${q.text}</span>
+                    </h3>
+                    <div class="space-y-3 sm:ml-9">
+                        ${['A', 'B', 'C', 'D'].map(optKey => `
+                            <div onclick="selectAnswer('${q.number}', '${optKey}')" data-optkey="${optKey}" class="option-container relative flex items-center p-4 border rounded-xl smooth-transition border-slate-200 hover:bg-slate-50 cursor-pointer text-slate-700">
+                                <div class="radio-outer w-5 h-5 rounded-full border-2 border-slate-300 flex items-center justify-center mr-4 shrink-0 smooth-transition bg-white">
+                                    <div class="radio-inner w-2 h-2 rounded-full bg-white smooth-transition opacity-0"></div>
+                                </div>
+                                <div class="flex-1 text-base leading-relaxed">
+                                    <span class="font-bold mr-2 text-slate-400 option-letter">${optKey}.</span> 
+                                    ${q.options[optKey]}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div id="feedback-${q.number}" class="hidden mt-6 sm:ml-9"></div>
+                </div>
+            `;
+        }
+
+        // --- 4. INTERACTION LOGIC ---
+        function selectAnswer(qNum, optKey) {
+            if (isReviewMode) return;
+            userAnswers[qNum] = optKey;
+            
+            // Fast DOM Update for specific question
+            const qDiv = document.getElementById(`q-${qNum}`);
+            if (!qDiv) return;
+            
+            qDiv.classList.add('border-blue-300', 'shadow-md');
+            qDiv.classList.remove('border-slate-200', 'shadow-sm');
+
+            const options = qDiv.querySelectorAll('.option-container');
+            options.forEach(opt => {
+                const isSelected = opt.dataset.optkey === optKey;
+                const rOuter = opt.querySelector('.radio-outer');
+                const rInner = opt.querySelector('.radio-inner');
+                const letter = opt.querySelector('.option-letter');
+
+                if (isSelected) {
+                    opt.className = "option-container relative flex items-center p-4 border rounded-xl smooth-transition border-blue-600 bg-blue-50 cursor-pointer text-blue-900 font-medium shadow-sm";
+                    rOuter.className = "radio-outer w-5 h-5 rounded-full border-2 flex items-center justify-center mr-4 shrink-0 smooth-transition border-blue-600 bg-blue-600";
+                    rInner.classList.replace('opacity-0', 'opacity-100');
+                    letter.classList.replace('text-slate-400', 'text-blue-700');
+                } else {
+                    opt.className = "option-container relative flex items-center p-4 border rounded-xl smooth-transition border-slate-200 hover:bg-slate-50 cursor-pointer text-slate-700";
+                    rOuter.className = "radio-outer w-5 h-5 rounded-full border-2 flex items-center justify-center mr-4 shrink-0 smooth-transition border-slate-300 bg-white";
+                    rInner.classList.replace('opacity-100', 'opacity-0');
+                    letter.classList.replace('text-blue-700', 'text-slate-400');
+                }
+            });
+
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const answeredCount = Object.keys(userAnswers).length;
+            const totalQs = currentTest.questions.length;
+            const progressPercent = (answeredCount / totalQs) * 100;
+            
+            document.getElementById('progress-count').innerText = `${answeredCount} / ${totalQs}`;
+            document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+            document.getElementById('bottom-progress-count').innerText = `Answered: ${answeredCount} of ${totalQs}`;
+        }
+
+        function submitTest() {
+            const answeredCount = Object.keys(userAnswers).length;
+            const total = currentTest.questions.length;
+            
+            if (answeredCount < total) {
+                if (!confirm(`You have only answered ${answeredCount} out of ${total} questions. Ready to submit?`)) return;
+            }
+            
+            isReviewMode = true;
+            let score = 0;
+
+            // Hide the progress bar
+            const progCont = document.getElementById('progress-container');
+            if(progCont) progCont.style.display = 'none';
+            
+            currentTest.questions.forEach(q => {
+                const userAns = userAnswers[q.number];
+                const isCorrect = userAns === q.correctAnswer;
+                if (isCorrect) score++;
+                
+                const qDiv = document.getElementById(`q-${q.number}`);
+                if (!qDiv) return;
+
+                // Update Question Card Styling
+                qDiv.classList.remove('border-blue-300', 'border-slate-200', 'shadow-md');
+                if (!userAns) {
+                    qDiv.classList.add('border-yellow-300', 'bg-slate-50/50');
+                } else {
+                    qDiv.classList.add(isCorrect ? 'border-green-300' : 'border-red-300');
+                }
+
+                // Update Options Styling & Disable Clicks
+                const options = qDiv.querySelectorAll('.option-container');
+                options.forEach(opt => {
+                    opt.style.pointerEvents = 'none';
+                    opt.classList.remove('hover:bg-slate-50', 'cursor-pointer');
+                    
+                    const key = opt.dataset.optkey;
+                    const rOuter = opt.querySelector('.radio-outer');
+                    
+                    if (key === q.correctAnswer) {
+                        // Correct Answer Style
+                        opt.className = "option-container relative flex items-center p-4 border-2 rounded-xl smooth-transition border-green-500 bg-green-50 text-green-900 font-bold shadow-sm z-10";
+                        rOuter.outerHTML = `<i class="fas fa-check-circle text-green-600 text-xl mr-4 shrink-0"></i>`;
+                    } else if (key === userAns && !isCorrect) {
+                        // Wrong Answer Style
+                        opt.className = "option-container relative flex items-center p-4 border rounded-xl smooth-transition border-red-300 bg-red-50 text-red-800 font-medium";
+                        rOuter.outerHTML = `<i class="fas fa-times-circle text-red-500 text-xl mr-4 shrink-0"></i>`;
+                    } else {
+                        // Unselected Style
+                        opt.className = "option-container relative flex items-center p-4 border rounded-xl smooth-transition border-slate-200 text-slate-400 opacity-60";
+                        rOuter.className = "radio-outer w-5 h-5 rounded-full border-2 border-slate-200 flex items-center justify-center mr-4 shrink-0 bg-slate-50";
+                    }
+                });
+
+                // Show Feedback
+                const feedbackDiv = document.getElementById(`feedback-${q.number}`);
+                feedbackDiv.classList.remove('hidden');
+                feedbackDiv.innerHTML = generateFeedbackHTML(q, userAns, isCorrect);
+            });
+
+            // Render Results Header & Footer
+            renderResultsUI(score, total);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function generateFeedbackHTML(q, userAns, isCorrect) {
+            if (!userAns) {
+                 return `
+                    <div class="p-5 bg-yellow-50 border border-yellow-200 rounded-xl text-yellow-800 animate-fade-in">
+                        <p class="font-bold mb-2 flex items-center text-lg"><i class="fas fa-exclamation-triangle mr-3 text-yellow-600"></i> Not Answered</p>
+                        <p class="mb-3">The correct answer is <strong>${q.correctAnswer}</strong>.</p>
+                        ${q.feedback && q.feedback !== q.options[q.correctAnswer] ? `
+                            <div class="mt-3 pt-3 border-t border-yellow-200/60 text-sm">
+                                <strong class="block mb-1 uppercase tracking-wide text-yellow-700">Explanation:</strong> 
+                                <span>${q.feedback}</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+
+            const icon = isCorrect ? '<i class="fas fa-check-circle text-green-600"></i> Correct!' : '<i class="fas fa-times-circle text-red-600"></i> Incorrect';
+            
+            return `
+                <div class="p-5 rounded-xl border ${isCorrect ? 'bg-green-50 border-green-200 text-green-800' : 'bg-red-50 border-red-200 text-red-800'} animate-fade-in shadow-sm">
+                    <p class="font-bold mb-2 flex items-center gap-2 text-lg">${icon}</p>
+                    ${!isCorrect ? `<p class="mb-3 text-red-900">The correct answer is <strong>${q.correctAnswer}</strong>.</p>` : ''}
+                    
+                    ${q.feedback && q.feedback !== q.options[q.correctAnswer] ? `
+                        <div class="mt-3 pt-3 border-t ${isCorrect ? 'border-green-200/60' : 'border-red-200/60'} text-sm sm:text-base">
+                            <strong class="block mb-1 uppercase tracking-wider text-xs ${isCorrect ? 'text-green-700' : 'text-red-700'}">Why is this correct?</strong> 
+                            <span class="leading-relaxed block">${q.feedback}</span>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderResultsUI(score, total) {
+            const percent = Math.round((score / total) * 100);
+            let color = "text-red-600"; let bg = "bg-red-50 border-red-200"; let icon = "fa-times-circle";
+            
+            if (percent >= 80) { color = "text-green-600"; bg = "bg-green-50 border-green-200"; icon = "fa-check-circle"; } 
+            else if (percent >= 60) { color = "text-yellow-600"; bg = "bg-yellow-50 border-yellow-200"; icon = "fa-exclamation-circle"; }
+
+            document.getElementById('score-header-container').innerHTML = `
+                <div class="${bg} border p-6 sm:p-10 rounded-2xl mb-8 text-center animate-fade-in shadow-sm">
+                    <i class="fas ${icon} text-5xl sm:text-6xl ${color} mb-4"></i>
+                    <h2 class="text-3xl sm:text-4xl font-black ${color} mb-2 tracking-tight">You Scored ${score} / ${total}</h2>
+                    <p class="text-slate-700 text-lg font-bold mb-6">Final Grade: ${percent}%</p>
+                </div>
+            `;
+
+            document.getElementById('bottom-bar').innerHTML = `
+                <div class="max-w-4xl mx-auto flex justify-center items-center px-4">
+                     <button onclick="renderHome()" class="w-full sm:w-auto px-10 py-3.5 bg-slate-800 text-white font-bold rounded-xl shadow-lg hover:bg-slate-900 active:bg-black smooth-transition text-lg flex justify-center items-center gap-2">
+                        <i class="fas fa-home"></i> Return to Dashboard
+                    </button>
+                </div>
+            `;
+        }
+
+        // Initialize on load
+        renderHome();
+    </script>
+</body>
+</html>
